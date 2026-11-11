@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "failoverguard"
+version = "0.1.0"
+description = "Offline policy validator and test harness for AI provider failover: route configs, capability and data-location checks, and a fail-closed eligibility decision table."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Ingenious AI"}]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+failoverguard = "failoverguard.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["failoverguard*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
